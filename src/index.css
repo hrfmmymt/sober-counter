@@ -29,6 +29,9 @@ body {
   align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #c8d0d4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='100'%3E%3Crect fill='%23c8d0d4' width='300' height='100'/%3E%3Cline x1='0' y1='50' x2='300' y2='50' stroke='%23b0b8bc' stroke-width='1'/%3E%3Cline x1='0' y1='100' x2='300' y2='100' stroke='%23b0b8bc' stroke-width='1'/%3E%3Cline x1='150' y1='0' x2='150' y2='50' stroke='%23b0b8bc' stroke-width='1'/%3E%3Cline x1='0' y1='50' x2='0' y2='100' stroke='%23b0b8bc' stroke-width='1'/%3E%3Cline x1='300' y1='50' x2='300' y2='100' stroke='%23b0b8bc' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 300px 100px;
 }
 
 @media (prefers-color-scheme: light) {
