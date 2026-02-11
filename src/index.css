@@ -34,6 +34,10 @@ body {
   background-size: 300px 200px;
 }
 
+main {
+  display: contents;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
