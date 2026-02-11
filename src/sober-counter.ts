@@ -59,36 +59,38 @@ export class SoberCounter extends LitElement {
     const seconds = this.pad(this.seconds)
 
     return html`
-      <h1 class="title">hrfmmymt has been sober for</h1>
-      <div class="display-container">
-        <div class="display">
-          <div class="unit">
-            <span class="digits">${years}</span>
-            <span class="label">Years</span>
-          </div>
-          <span class="colon"><span class="dot"></span><span class="dot"></span></span>
-          <div class="unit">
-            <span class="digits">${days}</span>
-            <span class="label">Days</span>
-          </div>
-          <span class="colon"><span class="dot"></span><span class="dot"></span></span>
-          <div class="unit">
-            <span class="digits">${hours}</span>
-            <span class="label">Hours</span>
-          </div>
-          <span class="colon"><span class="dot"></span><span class="dot"></span></span>
-          <div class="unit">
-            <span class="digits">${minutes}</span>
-            <span class="label">Minutes</span>
-          </div>
-          <span class="colon"><span class="dot"></span><span class="dot"></span></span>
-          <div class="unit">
-            <span class="digits">${seconds}</span>
-            <span class="label">Seconds</span>
+      <main class="main-content">
+        <h1 class="title">hrfmmymt has been sober for</h1>
+        <div class="display-container">
+          <div class="display">
+            <div class="unit">
+              <span class="digits">${years}</span>
+              <span class="label">Years</span>
+            </div>
+            <span class="colon"><span class="dot"></span><span class="dot"></span></span>
+            <div class="unit">
+              <span class="digits">${days}</span>
+              <span class="label">Days</span>
+            </div>
+            <span class="colon"><span class="dot"></span><span class="dot"></span></span>
+            <div class="unit">
+              <span class="digits">${hours}</span>
+              <span class="label">Hours</span>
+            </div>
+            <span class="colon"><span class="dot"></span><span class="dot"></span></span>
+            <div class="unit">
+              <span class="digits">${minutes}</span>
+              <span class="label">Minutes</span>
+            </div>
+            <span class="colon"><span class="dot"></span><span class="dot"></span></span>
+            <div class="unit">
+              <span class="digits">${seconds}</span>
+              <span class="label">Seconds</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="motto">EVERY SECOND COUNTS</div>
+        <div class="motto">EVERY SECOND COUNTS</div>
+      </main>
       <p class="credit">Quote from <a href="https://www.fxnetworks.com/shows/the-bear" target="_blank" rel="noopener noreferrer">The Bear</a></p>
     `
   }
@@ -105,8 +107,18 @@ export class SoberCounter extends LitElement {
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
       font-family: var(--font-display);
       font-style: italic;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .title,
@@ -209,8 +221,7 @@ export class SoberCounter extends LitElement {
     }
 
     .credit {
-      position: fixed;
-      bottom: 24px;
+      padding: 24px 0;
       font-size: 0.85rem;
       color: #666;
     }
