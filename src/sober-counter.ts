@@ -200,6 +200,46 @@ export class SoberCounter extends LitElement {
         inset 0 2px 10px rgba(0, 0, 0, 0.5),
         0 4px 20px rgba(0, 0, 0, 0.5);
     }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 1.2rem;
+        padding: 0 16px;
+      }
+
+      .display-container {
+        padding: 12px 8px;
+        border-width: 4px;
+        max-width: calc(100vw - 32px);
+        box-sizing: border-box;
+      }
+
+      .display {
+        font-size: clamp(1.2rem, 7.8vw, 4rem);
+      }
+
+      .colon {
+        margin: 0 0.1em;
+        gap: 6px;
+      }
+
+      .dot {
+        width: 3px;
+        height: 5px;
+      }
+
+      .label {
+        font-size: 0.45rem;
+        margin-top: 4px;
+      }
+
+      .motto {
+        margin-top: 24px;
+        max-width: 90%;
+        font-size: 1.2rem;
+        padding: 24px 12px;
+      }
+    }
   `
 }
 
