@@ -89,6 +89,7 @@ export class SoberCounter extends LitElement {
         </div>
       </div>
       <div class="motto">EVERY SECOND COUNTS</div>
+      <p class="credit">Quote from <a href="https://www.fxnetworks.com/shows/the-bear" target="_blank" rel="noopener noreferrer">The Bear</a></p>
     `
   }
 
@@ -108,7 +109,7 @@ export class SoberCounter extends LitElement {
       font-weight: 500;
       color: #333;
       text-align: center;
-      margin: 0 0 16px 0;
+      margin: 0 0 40px 0;
     }
 
     .display-container {
@@ -239,6 +240,24 @@ export class SoberCounter extends LitElement {
         font-size: 1.2rem;
         padding: 24px 12px;
       }
+    }
+
+    .credit {
+      position: fixed;
+      bottom: 24px;
+      font-family: system-ui, sans-serif;
+      font-style: normal;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .credit a {
+      color: #666;
+      text-decoration: underline;
+    }
+
+    .credit a:hover {
+      color: #333;
     }
   `
 }
