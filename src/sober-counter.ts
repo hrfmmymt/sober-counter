@@ -95,16 +95,28 @@ export class SoberCounter extends LitElement {
 
   static styles = css`
     :host {
+      --font-display: 'DSEG7-Modern', monospace;
+      --font-ui: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --color-accent: #7fdbff;
+      --color-accent-glow: rgba(127, 219, 255, 0.5);
+      --color-border: #2a2a2a;
+      --color-outline: #1a1a1a;
+
       display: flex;
       flex-direction: column;
       align-items: center;
-      font-family: 'DSEG7-Modern', monospace;
+      font-family: var(--font-display);
       font-style: italic;
     }
 
-    .title {
-      font-family: system-ui, sans-serif;
+    .title,
+    .motto,
+    .credit {
+      font-family: var(--font-ui);
       font-style: normal;
+    }
+
+    .title {
       font-size: 2rem;
       font-weight: 500;
       color: #333;
@@ -116,21 +128,21 @@ export class SoberCounter extends LitElement {
       background: #0a0a0a;
       padding: 24px 32px;
       border-radius: 2px;
-      border: 6px solid #2a2a2a;
+      border: 6px solid var(--color-border);
       box-shadow:
         inset 0 2px 10px rgba(0, 0, 0, 0.8),
         0 4px 20px rgba(0, 0, 0, 0.5);
-      outline: 2px solid #1a1a1a;
+      outline: 2px solid var(--color-outline);
     }
 
     .display {
       display: flex;
       align-items: flex-start;
       font-size: 4rem;
-      color: #7fdbff;
+      color: var(--color-accent);
       text-shadow:
-        0 0 5px #7fdbff,
-        0 0 10px rgba(127, 219, 255, 0.5);
+        0 0 5px var(--color-accent),
+        0 0 10px var(--color-accent-glow);
       letter-spacing: 0.05em;
     }
 
@@ -140,15 +152,11 @@ export class SoberCounter extends LitElement {
       align-items: center;
     }
 
-    .digits {
-      font-family: 'DSEG7-Modern', monospace;
-    }
-
     .label {
       font-family: system-ui, sans-serif;
       font-style: normal;
       font-size: 0.7rem;
-      color: #7fdbff;
+      color: var(--color-accent);
       text-shadow: none;
       margin-top: 8px;
       letter-spacing: 0.05em;
@@ -166,10 +174,10 @@ export class SoberCounter extends LitElement {
     .dot {
       width: 6px;
       height: 10px;
-      background-color: #7fdbff;
+      background-color: var(--color-accent);
       box-shadow:
-        0 0 5px #7fdbff,
-        0 0 10px rgba(127, 219, 255, 0.5);
+        0 0 5px var(--color-accent),
+        0 0 10px var(--color-accent-glow);
       transform: skewX(-12deg);
     }
 
@@ -187,19 +195,33 @@ export class SoberCounter extends LitElement {
       max-width: 60%;
       background: linear-gradient(to bottom, #1a3a5c, #0d2840);
       color: #fff;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-style: normal;
       font-size: 2.2rem;
       font-weight: 400;
       letter-spacing: 0.001em;
       padding: 40px 16px;
       text-align: center;
       border-radius: 2px;
-      border: 2px solid #2a2a2a;
-      outline: 1px solid #1a1a1a;
+      border: 2px solid var(--color-border);
+      outline: 1px solid var(--color-outline);
       box-shadow:
         inset 0 2px 10px rgba(0, 0, 0, 0.5),
         0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .credit {
+      position: fixed;
+      bottom: 24px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .credit a {
+      color: #666;
+      text-decoration: underline;
+    }
+
+    .credit a:hover {
+      color: #333;
     }
 
     @media (max-width: 768px) {
@@ -240,24 +262,6 @@ export class SoberCounter extends LitElement {
         font-size: 1.2rem;
         padding: 24px 12px;
       }
-    }
-
-    .credit {
-      position: fixed;
-      bottom: 24px;
-      font-family: system-ui, sans-serif;
-      font-style: normal;
-      font-size: 0.85rem;
-      color: #666;
-    }
-
-    .credit a {
-      color: #666;
-      text-decoration: underline;
-    }
-
-    .credit a:hover {
-      color: #333;
     }
   `
 }
